@@ -1,0 +1,110 @@
+/* =================================================
+   Redmine Modern Refinement Suite (INTJ Optimized)
+   ================================================= */
+
+:root {
+    --primary: #3498db;
+    --primary-hover: #2980b9;
+    --bg-main: #ffffff;
+    --bg-sub: #f8fafc;
+    --text-main: #1e293b;
+    --text-sub: #64748b;
+    --border: #e2e8f0;
+    --radius: 6px;
+    --clr-new: #0369a1; --bg-new: #e0f2fe;
+    --clr-work: #c2410c; --bg-work: #ffedd5;
+    --clr-done: #15803d; --bg-done: #dcfce7;
+    --clr-high: #dc2626; --bg-high: #fee2e2;
+}
+
+body, #content, #header, #footer, input, select, textarea {
+    font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Meiryo", sans-serif !important;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+#top-menu {
+    background: var(--bg-sub) !important;
+    border-bottom: 1px solid var(--border);
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+}
+
+#top-menu a {
+    color: var(--text-sub) !important;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 10px !important;
+}
+
+#header {
+    background: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 20px 10px 20px;
+}
+
+#header h1 {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#header h1::before {
+    content: "";
+    width: 4px;
+    height: 28px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+#quick-search input[type="text"] {
+    width: 200px;
+    height: 32px;
+    padding: 0 12px 0 34px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 20px !important;
+    background: #f1f5f9 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2364748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') no-repeat 12px center !important;
+    transition: all 0.3s ease;
+}
+
+#quick-search input[type="text"]:focus {
+    width: 280px;
+    background-color: var(--bg-main) !important;
+    outline: none;
+}
+
+#main-menu li a.selected {
+    color: var(--primary) !important;
+    background: transparent !important;
+    border-bottom: 3px solid var(--primary) !important;
+}
+
+.controller-gantts #main, .controller-calendars #main { max-width: 100% !important; margin: 10px !important; }
+.controller-gantts #sidebar, .controller-calendars #sidebar { display: none !important; }
+
+.status, td.priority, .attributes .priority .value {
+    display: inline-block;
+    padding: 2px 10px !important;
+    border-radius: 12px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+
+.status-1, .status-new { background: var(--bg-new) !important; color: var(--clr-new) !important; }
+.status-2, .status-in-progress { background: var(--bg-work) !important; color: var(--clr-work) !important; }
+.status-3, .status-5, .status-closed { background: var(--bg-done) !important; color: var(--clr-done) !important; }
+
+.priority-5, .priority-highest { background: var(--bg-high) !important; color: var(--clr-high) !important; }
+
+@media (prefers-color-scheme: dark) {
+    :root { --bg-main: #1a1c1e; --bg-sub: #111315; --text-main: #f1f5f9; --text-sub: #94a3b8; --border: #334155; }
+    body { background-color: #0f172a !important; }
+    #header, #top-menu, #content { background-color: var(--bg-main) !important; color: var(--text-main) !important; }
+    #quick-search input { background-color: var(--bg-sub) !important; }
+}
